@@ -14,14 +14,54 @@
 
     <script type="text/javascript">  
 
+    const App = {
+      transcriptionUrl: '',
+      public_id: '',
+      waitTransitions: async () => {
+        const maxAttempts = 30;
+        const delay = 2000; // 2 seconds
+
+        for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+          const url = `https://res.cloudinary.com/dzbt9qsyi/video/upload/${App.public_id}.txt`;
+          App.transcriptionUrl = url;
+          try {
+            const response = await fetch(App.transcriptionUrl);
+            if (response.ok) {''
+              const text = await response.text();
+              return text;
+            } else {
+              console.log(`Attempt ${attempt}: Transcription not ready yet.`);
+            }
+          } catch (error) {
+            console.error(`Attempt ${attempt}: Error occurred while fetching transcription.`);
+          }
+          if (attempt < maxAttempts) {
+            await new Promise(resolve => setTimeout(resolve, delay));
+          }
+        }
+        throw new Error("Transcription not ready after maximum attempts.");
+
+      },
+      transcription: async () => {
+        const response = await fetch(App.transcriptionUrl);
+        return response.text();
+      },
+      moment: async () => {
+        const transcriptionText = await App.transcription();
+      },
+     }
+
     const config = {
       cloudName: 'dzbt9qsyi',
       uploadPreset: 'upload_nlw'
     };
 
-    var myWidget = cloudinary.createUploadWidget(config, (error, result) => { 
+    var myWidget = cloudinary.createUploadWidget(config, async (error, result) => { 
         if (!error && result && result.event === "success") { 
           console.log('Done! Here is the image info: ', result.info); 
+          App.public_id = result.info.public_id;
+        
+          const isReady = await App.waitTransitions();
         }
       }
     )
