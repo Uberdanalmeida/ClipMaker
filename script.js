@@ -75,7 +75,7 @@ ${transcription}
 `;
 
                 const header = {
-                    "x-goog-api-key": apiKey,
+                    "x-goog-api-key": 'AIzaSyA2JpzSbKdtFC_P9MtwbtAKid7TAilgoNU',
                     "Content-Type": "application/json",
                 };
 
