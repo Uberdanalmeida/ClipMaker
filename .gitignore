@@ -1,0 +1,11 @@
+# Variáveis de ambiente (Segredos)
+.env
+
+# Pastas de dependências (se usar Node)
+node_modules/
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+config.js

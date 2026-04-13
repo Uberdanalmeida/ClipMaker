@@ -28,8 +28,8 @@
 
         // app state and actions
         const app = {
-            cloudName: "dhgdmbhtj",
-            uploadPreset: "upload_video",
+            cloudName: "dzbt9qsyi",
+            uploadPreset: "upload_nlw",
             transcriptionURL: "",
             public_id: "",
             waitForTranscription: async () => {
@@ -74,9 +74,10 @@ Transcription:
 ${transcription}
 `;
 
+                // DELETE esta linha ou substitua pela variável:
                 const header = {
-                    "x-goog-api-key": 'AIzaSyA2JpzSbKdtFC_P9MtwbtAKid7TAilgoNU',
-                    "Content-Type": "application/json",
+                        "x-goog-api-key": apiKey, // Use a variável que vem do input do usuário
+                        "Content-Type": "application/json",
                 };
 
                 const contents = [
