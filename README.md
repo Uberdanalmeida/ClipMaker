@@ -8,12 +8,12 @@ Este projeto é um gerador de momentos virais que utiliza **Inteligência Artifi
 
 ## 🚀 Tecnologias
 
-* **HTML5 & Tailwind CSS**: Interface moderna e responsiva.
-* **JavaScript (Vanilla)**: Lógica principal e manipulação de DOM.
-* **Cloudinary**: Hospedagem, upload de vídeos e geração de transcrições via IA.
-* **Google Gemini AI**: Processamento de linguagem natural para identificar os melhores momentos.
-* **GSAP**: Animações fluidas de entrada e transição.
-* **Lucide Icons**: Ícones minimalistas e elegantes.
+- **HTML5 & Tailwind CSS**: Interface moderna e responsiva.
+- **JavaScript (Vanilla)**: Lógica principal e manipulação de DOM.
+- **Cloudinary**: Hospedagem, upload de vídeos e geração de transcrições via IA.
+- **Google Gemini AI**: Processamento de linguagem natural para identificar os melhores momentos.
+- **GSAP**: Animações fluidas de entrada e transição.
+- **Lucide Icons**: Ícones minimalistas e elegantes.
 
 ---
 
